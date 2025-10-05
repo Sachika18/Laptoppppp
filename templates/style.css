@@ -1,0 +1,68 @@
+
+body {
+  background: linear-gradient(135deg, #eef3f8 0%, #dbeafe 100%);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding-top: 40px;
+  perspective: 1200px;
+}
+
+.container {
+  background: white;
+  width: 450px;
+  margin: auto;
+  padding: 30px 30px 20px 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+  will-change: transform;
+}
+
+input, select, button {
+  width: 90%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 1.5px solid #60a5fa;
+  box-shadow: 0 2px 8px rgba(96,165,250,0.12);
+}
+
+button {
+  background: linear-gradient(90deg, #4f8cff 0%, #38bdf8 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+  box-shadow: 0 4px 16px rgba(56,189,248,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* 3D Animation and Scroll Animation */
+.animate-in {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98) perspective(700px) rotateX(8deg);
+  transition: opacity 0.7s cubic-bezier(.25,.8,.25,1), transform 0.7s cubic-bezier(.25,.8,.25,1);
+}
+.animate-in.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1) perspective(700px) rotateX(0deg);
+}
+
+label, select, input, button, h1, h2 {
+  will-change: transform, opacity;
+}
